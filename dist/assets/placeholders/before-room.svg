@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <rect width="960" height="600" fill="#D5D7DA"/>
+  <!-- Bare plaster & screeding wall grid -->
+  <rect x="0" y="460" width="960" height="140" fill="#BFC3C8"/>
+  <line x1="0" y1="460" x2="960" y2="460" stroke="#9AA0A6" stroke-width="2"/>
+  <!-- Exposed concrete / primer patches -->
+  <rect x="65" y="70" width="830" height="390" fill="#E1E3E6" stroke="#A8AEB5" stroke-width="2" stroke-dasharray="10 6"/>
+  <rect x="120" y="120" width="240" height="170" fill="#CDD1D6" stroke="#9EA4AC" stroke-width="1.5"/>
+  <line x1="120" y1="120" x2="360" y2="290" stroke="#AEB4BC" stroke-width="1.5"/>
+  <line x1="360" y1="120" x2="120" y2="290" stroke="#AEB4BC" stroke-width="1.5"/>
+  <!-- Unfinished POP ceiling line -->
+  <rect x="0" y="0" width="960" height="52" fill="#C4C8CE"/>
+  <line x1="0" y1="52" x2="960" y2="52" stroke="#949BA3" stroke-width="2"/>
+  <!-- Paint bucket & drop sheet silhouette -->
+  <rect x="640" y="395" width="90" height="65" rx="3" fill="#9AA0A6"/>
+  <rect x="634" y="388" width="102" height="12" rx="2" fill="#7D848B"/>
+  <path d="M510 460L540 420H785L820 460H510Z" fill="#B0B5BC"/>
+  <text x="48" y="552" fill="#374151" font-family="sans-serif" font-size="18" font-weight="600">BEFORE (DEMO) — Bare Screeded Wall &amp; Unfinished Surface</text>
+</svg>

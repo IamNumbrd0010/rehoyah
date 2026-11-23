@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#EDEBE6"/>
+  <rect x="0" y="510" width="1200" height="165" fill="#DFDBD2"/>
+  <line x1="0" y1="510" x2="1200" y2="510" stroke="#C9C3B8" stroke-width="2"/>
+  <!-- Architectural wall panelling -->
+  <rect x="70" y="75" width="460" height="390" fill="#F5F4F0" stroke="#D5D0C5" stroke-width="2"/>
+  <line x1="150" y1="75" x2="150" y2="465" stroke="#E3DFD6" stroke-width="2"/>
+  <line x1="230" y1="75" x2="230" y2="465" stroke="#E3DFD6" stroke-width="2"/>
+  <line x1="310" y1="75" x2="310" y2="465" stroke="#E3DFD6" stroke-width="2"/>
+  <line x1="390" y1="75" x2="390" y2="465" stroke="#E3DFD6" stroke-width="2"/>
+  <line x1="470" y1="75" x2="470" y2="465" stroke="#E3DFD6" stroke-width="2"/>
+  <!-- Feature navy wall panel -->
+  <rect x="570" y="75" width="560" height="390" fill="#0B2545"/>
+  <rect x="605" y="110" width="490" height="320" stroke="#D4AF37" stroke-opacity="0.45" stroke-width="1.5"/>
+  <!-- Recessed ceiling & pendant -->
+  <line x1="850" y1="0" x2="850" y2="175" stroke="#D4AF37" stroke-width="2.5"/>
+  <path d="M795 175H905L922 215H778L795 175Z" fill="#D4AF37"/>
+  <!-- Console & furniture silhouette -->
+  <rect x="640" y="370" width="420" height="90" rx="4" fill="#8C6D46"/>
+  <rect x="655" y="460" width="16" height="50" fill="#5A4429"/>
+  <rect x="1029" y="460" width="16" height="50" fill="#5A4429"/>
+  <!-- Sofa elevation -->
+  <rect x="130" y="345" width="380" height="120" rx="8" fill="#153966"/>
+  <rect x="155" y="385" width="330" height="80" rx="4" fill="#1C467A"/>
+  <rect x="145" y="465" width="14" height="45" fill="#0B2545"/>
+  <rect x="481" y="465" width="14" height="45" fill="#0B2545"/>
+  <!-- Framed artwork -->
+  <rect x="235" y="140" width="170" height="145" fill="#FFFFFF" stroke="#0B2545" stroke-width="2"/>
+  <rect x="255" y="160" width="130" height="105" fill="#EAE6DC"/>
+  <text x="60" y="635" fill="#4B5563" font-family="sans-serif" font-size="18" font-weight="600">REHOYAH DEMO PLACEHOLDER — REPLACE WITH FINISHED INTERIOR PHOTOGRAPHY (16:9)</text>
+</svg>

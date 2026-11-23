@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" fill="none">
+  <rect width="800" height="560" fill="#E9ECEF"/>
+  <rect x="0" y="420" width="800" height="140" fill="#CFD5DC"/>
+  <rect x="80" y="80" width="640" height="340" fill="#FFFFFF" stroke="#B8C0CA" stroke-width="2"/>
+  <rect x="110" y="110" width="180" height="240" fill="#0B2545"/>
+  <rect x="310" y="110" width="180" height="240" fill="#153966"/>
+  <rect x="510" y="110" width="180" height="240" fill="#E5E7EB"/>
+  <rect x="130" y="350" width="540" height="32" fill="#8C6D46"/>
+  <rect x="260" y="55" width="280" height="14" fill="#D4AF37"/>
+  <text x="48" y="510" fill="#374151" font-family="sans-serif" font-size="16" font-weight="600">DEMO PLACEHOLDER — COMMERCIAL &amp; OFFICE PROJECT</text>
+</svg>
