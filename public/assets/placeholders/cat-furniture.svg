@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F5F3EE"/>
+  <!-- Custom cabinetry / console elevation -->
+  <rect x="115" y="210" width="570" height="185" rx="6" fill="#8C6D46"/>
+  <rect x="135" y="230" width="165" height="145" fill="#755937"/>
+  <rect x="317" y="230" width="166" height="145" fill="#755937"/>
+  <rect x="500" y="230" width="165" height="145" fill="#755937"/>
+  <rect x="280" y="285" width="8" height="36" fill="#D4AF37"/>
+  <rect x="330" y="285" width="8" height="36" fill="#D4AF37"/>
+  <rect x="515" y="285" width="8" height="36" fill="#D4AF37"/>
+  <rect x="150" y="395" width="18" height="70" fill="#4A3822"/>
+  <rect x="632" y="395" width="18" height="70" fill="#4A3822"/>
+  <line x1="65" y1="465" x2="735" y2="465" stroke="#D1C7B7" stroke-width="3"/>
+  <text x="48" y="548" fill="#4B5563" font-family="sans-serif" font-size="16" font-weight="600">DEMO PLACEHOLDER — CUSTOM FURNITURE &amp; CABINETRY</text>
+</svg>

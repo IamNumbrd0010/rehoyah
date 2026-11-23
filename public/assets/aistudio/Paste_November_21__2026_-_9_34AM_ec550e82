@@ -1,0 +1,1060 @@
+REHOYAH | MASTER STITCH WEBSITE BUILD PROMPT Transforming Spaces,
+Creating Lasting Impressions. Version: Frontend-first production
+blueprint
+
+============================================================ 1. YOUR
+ROLE AND THE GOAL
+============================================================
+
+Act as a senior product designer, UX architect, and frontend engineer.
+Build a complete, cohesive, responsive website and web-app frontend for
+Rehoyah, a Nigerian interior and exterior finishing, products,
+furniture, and renovation brand.
+
+Do not produce only a landing-page mockup. Build the entire experience
+described below: the public website, shop experience, customer account
+screens, quotation and booking flows, staff workspace, and admin control
+center. Make all screens feel like one real product, sharing design
+tokens, components, navigation patterns, spacing, typography, and
+interaction behavior.
+
+This project is intended to become a real business website. Make
+thoughtful decisions where details are missing, but do not invent fake
+company facts, addresses, phone numbers, certifications, prices,
+warranties, client logos, testimonials, staff names, project claims, or
+performance statistics. Use clearly labeled editable demo
+data/placeholders instead.
+
+The site must look crafted by a thoughtful human design team: elegant,
+practical, editorial, confident, and restrained. Avoid generic
+AI-generated website aesthetics, excessive gradients, glowing cards,
+random blobs, glassmorphism everywhere, overdone animations, meaningless
+floating shapes, fake dashboards full of arbitrary charts, oversized
+rounded cards on every element, stock-looking illustrations, and
+decorative graphics that distract from the real content. Prioritize
+strong photography, clear hierarchy, useful whitespace, deliberate
+composition, and usability.
+
+============================================================ 2. STRICT
+TECHNICAL REQUIREMENTS
+============================================================
+
+Build using ONLY: - React - Vite - JavaScript - JSX - CSS
+
+Do NOT use: - TypeScript - TS - TSX - Next.js - Vue - Angular - backend
+code - server actions - a database wired into this build - frameworks
+that replace the requested React/Vite structure
+
+Use ordinary JavaScript and JSX files. Use separate, readable CSS files.
+Keep the project compatible with a standard Vite React JavaScript setup.
+
+If you use icons, prefer a consistent lightweight icon library such as
+lucide-react if the environment supports installing dependencies.
+Otherwise use simple inline SVG icons with accessible labels. Do not use
+emoji as interface icons.
+
+Create a maintainable folder structure. Suggested structure (adjust if
+needed, but keep the same clarity):
+
+src/ main.jsx App.jsx styles/ tokens.css global.css responsive.css
+components/ layout/ SiteHeader.jsx SiteFooter.jsx PageShell.jsx
+MobileNavigation.jsx Breadcrumbs.jsx common/ Button.jsx
+SectionHeading.jsx EmptyState.jsx LoadingState.jsx StatusBadge.jsx
+Modal.jsx Toast.jsx ConfirmDialog.jsx SearchInput.jsx Pagination.jsx
+ImageUploadPlaceholder.jsx shop/ ProductCard.jsx ProductFilters.jsx
+CartDrawer.jsx QuantityControl.jsx projects/ BeforeAfterSlider.jsx
+ProjectCard.jsx dashboard/ DashboardShell.jsx DashboardSidebar.jsx
+DashboardTopbar.jsx StatCard.jsx DataTable.jsx PermissionNotice.jsx
+pages/ public/ HomePage.jsx AboutPage.jsx ServicesPage.jsx
+ServiceDetailPage.jsx ShopPage.jsx ProductDetailPage.jsx
+ProjectsPage.jsx ProjectDetailPage.jsx InspirationPage.jsx
+ArticleDetailPage.jsx ContactPage.jsx QuoteRequestPage.jsx
+BookingPage.jsx NotFoundPage.jsx auth/ LoginPage.jsx RegisterPage.jsx
+ForgotPasswordPage.jsx customer/ CustomerDashboard.jsx
+CustomerOrdersPage.jsx CustomerOrderDetailPage.jsx
+CustomerWishlistPage.jsx CustomerQuotesPage.jsx CustomerProjectsPage.jsx
+CustomerProfilePage.jsx staff/ StaffDashboard.jsx StaffTasksPage.jsx
+StaffEnquiriesPage.jsx StaffProductsPage.jsx StaffProjectsPage.jsx
+StaffContentPage.jsx StaffProfilePage.jsx admin/ AdminDashboard.jsx
+AdminStaffPage.jsx AdminProductsPage.jsx AdminCategoriesPage.jsx
+AdminOrdersPage.jsx AdminQuotesPage.jsx AdminProjectsPage.jsx
+AdminServicesPage.jsx AdminPortfolioPage.jsx AdminArticlesPage.jsx
+AdminReviewsPage.jsx AdminCustomersPage.jsx AdminAppointmentsPage.jsx
+AdminReportsPage.jsx AdminSettingsPage.jsx AdminActivityPage.jsx data/
+demoData.js demoUsers.js services/ README.md authService.js
+productService.js orderService.js quoteService.js projectService.js
+contentService.js staffService.js uploadService.js
+notificationService.js utils/ formatCurrency.js validation.js
+permissions.js
+
+Do not put the entire website in one giant JSX file. Do not create
+duplicated page markup where reusable components make sense. Keep state
+and UI responsibilities understandable. Avoid overengineering, but
+establish clean separation so a developer can replace demo services with
+real API/database implementations later.
+
+============================================================ 3. BRAND
+AND VISUAL DESIGN
+============================================================
+
+Brand: REHOYAH
+
+Primary tagline: Transforming Spaces, Creating Lasting Impressions.
+
+Positioning: A complete interior and exterior finishing brand in Nigeria
+providing paint, décor materials, furniture, interior solutions,
+installation, renovation, and professional services. It should feel like
+a capable one-stop solution for residential and commercial environments.
+
+Primary color: Deep Navy #0B2545
+
+Secondary: Gold #D4AF37
+
+Base: White #FFFFFF Light Grey: use subtle neutral greys for page
+backgrounds, borders, and surface hierarchy.
+
+Accent: Orange #F57C00, used sparingly for emphasis, not everywhere.
+
+Typography: - Poppins Bold/Semibold for headings - Open Sans for body
+copy - Montserrat for button labels if available If font loading is
+unavailable, choose clean system fallbacks.
+
+Design characteristics: - Premium but accessible, not ostentatious. -
+Nigerian business context without clichés. - Editorial photography and
+real material/space imagery. - Clear layout rhythm and spacing. - Mostly
+white/light neutral content surfaces with navy used for navigation,
+footer, selected sections, and strong anchors. - Gold for meaningful
+accents, primary CTA highlights, and small details. - Orange is
+occasional and purposeful. - Buttons have clear states and good
+contrast. - Use subtle borders and restrained shadows. - Rounded corners
+should be moderate and consistent. Avoid making every component a pill
+or huge rounded rectangle. - Use animation only to support usability:
+short transitions, subtle hover feedback, gentle entrance when
+appropriate. Respect reduced-motion preferences. - The mobile experience
+must be intentionally designed, not merely desktop content squeezed
+down.
+
+Avoid: - Constant gold-on-everything. - Neon colors. - Glass panels
+everywhere. - Artificial 3D graphics. - Huge gradients. - Excessive
+animation. - Random stock illustration decorations. - Unnecessary
+dashboard charts. - Overly dense text blocks. - Inconsistent icon
+styles. - Placeholder text that looks like lorem ipsum. - Fake reviews,
+fake customer logos, fake sales data, or fake statistics.
+
+============================================================ 4.
+RESPONSIVE AND ACCESSIBILITY REQUIREMENTS
+============================================================
+
+Make the website usable on: - Large desktop - Laptop - Tablet - Small
+mobile phones
+
+Requirements: - Responsive navigation, with a clear mobile menu. -
+Dashboard sidebar becomes an accessible mobile drawer or navigation
+pattern. - Tables adapt to narrow screens: use horizontal scrolling only
+when appropriate, or convert rows to readable stacked summaries. - Forms
+have visible labels, helpful validation, error messages, and success
+states. - Keyboard navigation must work. - Buttons and links have focus
+states. - Modal focus behavior should be sensible. - Images use
+descriptive alt text where meaningful; decorative images use empty
+alt. - Color contrast should be sufficient. - Do not rely on color alone
+to communicate status. - Respect prefers-reduced-motion. - Prevent
+content from overflowing horizontally. - Use semantic headings in a
+logical order. - Loading, empty, error, and success states should be
+designed for major experiences.
+
+============================================================ 5. WEBSITE
+INFORMATION ARCHITECTURE
+============================================================
+
+Build these public pages and routes, with working navigation between
+them:
+
+PUBLIC: - / - /about - /services - /services/:slug - /shop -
+/shop/:productSlug - /projects - /projects/:projectSlug - /inspiration -
+/inspiration/:articleSlug - /contact - /request-quote -
+/book-consultation
+
+AUTH: - /login - /register - /forgot-password
+
+CUSTOMER: - /account - /account/orders - /account/orders/:id -
+/account/wishlist - /account/quotes - /account/projects -
+/account/profile
+
+STAFF: - /staff - /staff/tasks - /staff/enquiries - /staff/products -
+/staff/projects - /staff/content - /staff/profile
+
+ADMIN: - /admin - /admin/staff - /admin/products - /admin/categories -
+/admin/orders - /admin/quotes - /admin/projects - /admin/services -
+/admin/portfolio - /admin/articles - /admin/reviews - /admin/customers -
+/admin/appointments - /admin/reports - /admin/settings - /admin/activity
+
+Provide a coherent routing implementation. If a routing package is
+available, use React Router. Do not leave navigation links as dead
+links. If a route is not implemented, show a useful placeholder screen
+and label it as not yet connected rather than silently doing nothing.
+
+============================================================ 6. PUBLIC
+WEBSITE: PAGE DETAILS
+============================================================
+
+A. HOMEPAGE
+
+Create a high-quality home page with the following structure:
+
+1.  Header:
+
+    -   Rehoyah logo/wordmark (use a typographic placeholder if no logo
+        asset is supplied; do not invent a logo image)
+    -   Home
+    -   About
+    -   Services
+    -   Shop
+    -   Projects
+    -   Inspiration
+    -   Contact
+    -   Search icon/control
+    -   Customer account icon
+    -   Cart icon with item count
+    -   Prominent “Get a Quote” button
+    -   Mobile menu
+
+2.  Hero:
+
+    -   Large, editorial photograph of a finished interior or a
+        carefully selected material/space image.
+    -   Avoid fake AI-looking graphics.
+    -   Headline: “Transforming Every Space Into Excellence”
+    -   Supporting text about paint, décor, furniture, finishing, and
+        professional services.
+    -   CTA: “Request a Quote”
+    -   Secondary CTA: “Explore Our Products”
+    -   The hero image must be replaceable through an admin-managed
+        content slot in future.
+    -   Do not force an autoplay video. A video slot can be designed,
+        but use a static image fallback.
+
+3.  Credibility/statistics: Use editable demo placeholders rather than
+    invented business claims. Do not publish numbers such as “1000
+    projects” or “10 years” as real facts unless supplied. Show neutral
+    placeholders in the demo or make this section configurable and
+    hidden if values are not verified.
+
+4.  Shop categories: Paints & Finishes; Decoration Materials; Furniture;
+    Lighting; Tools & Accessories.
+
+5.  Featured services: Show six selected service cards with images,
+    brief copy, and links.
+
+6.  Why Rehoyah: Quality materials; skilled workmanship; professional
+    team; clear communication; dependable delivery; tailored solutions.
+    Avoid unsupported guarantees.
+
+7.  Featured products: Product cards with demo labels. Clearly mark
+    sample/demo content as demonstration data.
+
+8.  Project showcase: Curated project cards linking to detail pages.
+
+9.  Before/after section: Interactive comparison slider with keyboard
+    support and labels. Use local demo image placeholders and comments
+    explaining where real before/after images should be supplied.
+
+10. Our process: Consultation → Planning → Selection/Quotation →
+    Execution → Final Review. Adapt copy to avoid promises not
+    confirmed.
+
+11. Testimonials: Create a testimonial component but do not fabricate
+    real customer endorsements. Use visibly marked sample placeholders,
+    or hide the section until verified testimonials are entered.
+
+12. Inspiration/articles: Preview a few decoration articles using
+    clearly marked demo content.
+
+13. CTA: “Need Your Space Transformed?” with Request a Quote and Book a
+    Consultation.
+
+14. Footer: Brand/tagline, quick links, shop categories, services,
+    contact placeholders, social links placeholders, newsletter signup,
+    privacy and terms links (placeholder routes or screens if not
+    built).
+
+B. ABOUT PAGE
+
+Include: - Company introduction/story with editable placeholder
+content. - Vision statement: “To become Nigeria’s most trusted and
+innovative interior and exterior finishing company, delivering
+exceptional products and services that transform homes, offices,
+schools, and commercial spaces.” - Mission statement: “To provide
+high-quality paints, furniture, interior décor products, and
+professional finishing services through innovation, skilled
+craftsmanship, integrity, and excellent customer service while creating
+beautiful and functional environments for our clients.” - Core values,
+REHOYAH: Excellence – never compromise on quality. Leadership – lead
+with innovation and professionalism. Accountability – take
+responsibility for our work. Workmanship – deliver craftsmanship built
+to last. Also include Integrity, Creativity, Customer Satisfaction,
+Reliability, Innovation, Teamwork, and Professionalism. - Why choose
+Rehoyah - Professional team - Premium materials - Value-conscious
+pricing - Quality assurance - Timely delivery (present as company
+commitment, not a guaranteed claim) - CTA
+
+Do not add fake founders, dates, certifications, addresses, or
+biographies.
+
+C. SERVICES
+
+Build an attractive services index and individual service detail
+templates. Services include:
+
+Finishing and wall treatments: - Interior Painting - Exterior Painting -
+Decorative Wall Finishes - Screeding - Stucco - Marble Effects -
+Wallpaper Installation - POP Ceiling - 3D Wall Panels
+
+Furniture and custom production: - Furniture Production - Kitchen
+Cabinets - Wardrobes - TV Consoles - Office Furniture - School
+Furniture - Hotel Furniture - Furniture Installation
+
+Other: - Renovation - Interior Design Consultation
+
+Service cards should support category, image, description, slug,
+featured flag, and active status. Service detail pages should include
+service description, process, gallery, related services, FAQ
+placeholder, and a quote CTA. Do not invent specific fixed pricing.
+Services should be data-driven so the admin can add, edit, reorder,
+publish/unpublish them.
+
+D. SHOP
+
+Build a real frontend shopping experience using demo data and local
+state, with a clean integration boundary for backend later.
+
+Categories: - Paints: Emulsion, Satin, Matte, Textured Paint, Silk
+Paint - Decoration Materials: Wallpapers, Cornices, Wall Panels,
+Adhesives, Rollers, Brushes, Putty - Furniture - Lighting - Accessories
+
+Shop functionality: - Product search - Category filtering - Sort by
+newest, price low-to-high, price high-to-low, and relevant featured
+sort - Filters for availability and category; provide appropriate
+additional filters only if demo data supports them - Product detail
+page - Image gallery - Product description and specs - Price with NGN
+formatting - Variations/options where appropriate - Quantity control -
+Add to cart - Wishlist toggle - Cart drawer or cart page - Cart item
+update/remove - Subtotal calculation - Checkout flow UI - Customer
+contact/address details - Delivery/pickup choice placeholder - Order
+confirmation UI
+
+Do not collect or store real payment information. Payment is a future
+integration slot. Clearly mark checkout as demo/not connected to
+payment. Do not claim an order was paid. The frontend may simulate an
+order draft or cart checkout for demonstration, but state it clearly.
+
+Product data should be in a separate data file. Use believable example
+product names and descriptions but mark all products as sample/demo
+content. Do not present fake inventory or prices as company-confirmed
+facts. Use Nigerian Naira formatting (₦) and a reusable currency
+formatter.
+
+E. PROJECTS / PORTFOLIO
+
+Projects page with categories: - Residential - Commercial - Office -
+School - Church - Hotel - Restaurant - Interior - Exterior - Furniture
+
+Features: - Search/filter by category - Project cards - Project detail
+pages - Project title - Location placeholder (do not invent real client
+address) - Project type - Description - Services used - Completion date
+placeholder - Image gallery - Before/after comparison where images
+exist - Related projects - Quote CTA
+
+Build the project content from demo data, with clear comments showing
+the fields expected from the backend. Admin/staff content entry should
+support project image gallery and before/after image pairs.
+
+F. INSPIRATION / BLOG
+
+Create an editorial article listing and article-detail layout.
+
+Suggested article topics: - Best Paint Colours for Nigerian Homes -
+Modern Living Room Ideas - Exterior Paint Maintenance - Choosing Office
+Furniture - Wallpaper vs Paint - Interior Design Trends
+
+Features: - Search - Category/tag filter - Featured article - Cards with
+thumbnail, title, excerpt, date placeholder, category, read time
+placeholder - Article detail with typography optimized for reading, hero
+image, body, related articles, share controls - Content data is editable
+in admin - No fake authorship, publication dates, or factual claims
+presented as verified. Demo article content should be clearly marked.
+
+G. CONTACT
+
+Include: - Phone placeholder - WhatsApp placeholder - Email
+placeholder - Location/address placeholder - Working hours placeholder -
+Social media placeholders - Contact form with name, email, phone, topic
+and message - Map location placeholder (do not invent an address or
+embed an incorrect map) - CTA to quote request and consultation - Form
+validation, success state, and a demo notice that it is not yet sending
+to a backend.
+
+H. REQUEST A QUOTE
+
+Form fields: - Name - Phone - Email - Location - Service selection -
+Property type (home, office, school, hotel, commercial, other) -
+Description - Budget range (optional) - Desired timeline - Upload photos
+(frontend preview only, no actual backend upload) - Request site
+inspection checkbox - Consent to be contacted
+
+Validate required fields. Provide clear errors, a review/confirmation
+state, and success UI. The success state must clearly say the request is
+only stored locally/demo and is not yet sent to Rehoyah until the
+backend is connected.
+
+I. CONSULTATION BOOKING
+
+-   Service/consultation type
+-   Preferred date
+-   Preferred time slot
+-   Contact information
+-   Location or remote preference
+-   Optional description
+-   Confirmation state
+-   Demo disclaimer: appointment request not actually booked or
+    delivered to the company.
+
+J. NEWSLETTER
+
+Email input, validation, success state. Mark as demo-only until
+service/backend connected.
+
+============================================================ 7.
+AUTHENTICATION AND CUSTOMER EXPERIENCE
+============================================================
+
+Design login, registration, and forgot-password screens.
+
+Authentication screens: - Email - Password - Show/hide password -
+Remember me (frontend placeholder) - Forgot password - Login -
+Register - Password reset form/success state - Validation - Helpful
+errors
+
+Never hardcode a real password or allow public users to choose an admin
+role during registration.
+
+Registration: - Full name - Email - Phone (optional/required based on
+chosen design) - Password - Confirm password - Terms/privacy consent -
+Account type should default to Customer. Never expose Staff or Admin
+role selection as a public registration option.
+
+Frontend demo role switching may be included for previewing dashboards,
+but it must be unmistakably labeled DEMO ROLE SWITCHER and must not be
+represented as secure authentication. Place it only in a
+development/demo area. Comments must explain that it will be removed or
+replaced once real authentication is connected.
+
+Customer portal: - Dashboard overview - Orders list and order detail -
+Wishlist - Quotes list and quote detail/status - Projects and progress
+placeholders - Profile editing UI - Address management UI
+
+Customer statuses: Orders: Pending, Confirmed, Processing, Ready,
+Shipped/Out for Delivery, Delivered, Cancelled (adapt based on type).
+Quotes: Received, Under Review, Preparing, Sent, Accepted, Declined,
+Expired. Projects: Planned, In Progress, On Hold, Completed.
+
+All customer interactions should work in demo frontend state, but
+clearly indicate when persistence/backend is not connected.
+
+============================================================ 8. STAFF
+WORKSPACE ============================================================
+
+Build a separate, polished staff workspace with its own navigation
+shell, responsive behavior, and staff-specific content.
+
+Staff dashboard overview: - Welcome panel - Assigned tasks - Task
+deadlines - Assigned enquiries - Quote work queue - Project
+assignments - Content awaiting submission - Recent activity -
+Notifications
+
+Staff pages: 1. Tasks - Task title - Description - Priority - Due date -
+Status - Assigned by - Related project/enquiry - Update status -
+Filter/sort - Task detail drawer/page
+
+2.  Enquiries
+    -   Assigned enquiries list
+    -   Customer details (demo)
+    -   Service requested
+    -   Location
+    -   Budget (if supplied)
+    -   Request date
+    -   Status
+    -   Notes
+    -   Add internal note
+    -   Update status
+    -   Request/prepare quote
+    -   Assignment placeholder
+3.  Products (permission-dependent)
+    -   Add product
+    -   Edit permitted product
+    -   Image preview placeholder
+    -   Product title
+    -   SKU placeholder
+    -   Category
+    -   Description
+    -   Price
+    -   Variations
+    -   Stock quantity
+    -   Status
+    -   Save draft
+    -   Submit for admin review
+    -   Show pending/approved/rejected status
+4.  Projects
+    -   Assigned projects
+    -   Project status
+    -   Milestones
+    -   Progress update
+    -   Upload photos placeholder
+    -   Notes
+    -   Timeline
+5.  Content
+    -   Create/edit article draft
+    -   Project submission
+    -   Gallery entry submission
+    -   Preview
+    -   Submit for review
+    -   Draft/pending/rejected/published statuses
+6.  Profile
+    -   Staff name and profile details (demo)
+    -   Role
+    -   Contact information
+    -   Notification preferences UI
+    -   Password/account settings placeholder
+
+Staff should only see the modules their permissions allow. Use demo
+permissions to show the UI. Add clear comments at the permission checks
+indicating real backend authorization must enforce these permissions
+too.
+
+============================================================ 9. ADMIN
+CONTROL CENTER
+============================================================
+
+Build a complete admin dashboard with an elegant, professional,
+data-dense-but-readable layout. Use a consistent sidebar and topbar,
+breadcrumb, search, notifications, profile menu, responsive sidebar, and
+sensible page titles.
+
+Admin overview: - Orders snapshot - Quote/enquiry snapshot - Products
+snapshot - Projects snapshot - Staff activity - Recent submissions -
+Items requiring attention - Useful quick actions
+
+Do not invent meaningful business analytics. Use clearly labeled sample
+data, or use neutral placeholder metrics that are marked DEMO. Avoid
+charts unless they answer a useful question. If a chart is included,
+label its demo nature and use a simple readable design.
+
+Admin modules:
+
+A. Staff and permissions: - Staff list/search/filter - Invite/create
+staff UI - Staff profile/detail - Activate/deactivate/suspend - Role
+assignment - Permission editor - Assign tasks - View staff activity -
+Department/team field placeholder - Confirmation before sensitive
+actions
+
+Suggested staff roles (configurable): - Administrator - Content Editor -
+Store/Product Manager - Sales/Quotation Staff - Project Coordinator -
+General Staff
+
+Use permissions rather than assuming every role has identical access.
+Example permission keys: - manageProducts - createProducts -
+editProducts - publishProducts - manageOrders - updateOrderStatus -
+manageQuotes - assignQuotes - manageProjects - updateProjects -
+manageServices - managePortfolio - manageArticles - publishArticles -
+manageReviews - manageCustomers - manageAppointments - manageStaff -
+manageSettings - viewReports - viewActivityLogs
+
+Use a permission utility and demo role configuration rather than
+scattering permission conditions across pages. Explain that real
+authorization must be enforced server-side/database-side. Hiding UI
+alone is not security.
+
+B. Product management: - Product list - Search - Category filter -
+Status filter - Stock filter - Sort - Create/edit product - Product
+image/gallery preview slots - Product variations - SKU placeholder -
+Price - Sale price optional - Stock quantity - Category - Description -
+Specs - Featured toggle - Visibility - Draft/pending/published/archived
+status - Submit/publish workflow - Delete confirmation
+
+C. Category management: - Create/edit/delete category - Category name -
+Description - Category image placeholder - Parent category optional -
+Slug - Display order - Active status
+
+D. Order management: - Orders list - Search by order/customer -
+Filters - Order detail - Customer details - Items and quantities -
+Totals - Payment status (demo) - Fulfillment status - Delivery details -
+Notes - Status update history placeholder - Update status - Cancellation
+action with confirmation - Order export placeholder
+
+E. Quotations and enquiries: - Quote request list - Filters - Detail
+view - Customer contact information - Request description - Service -
+Location - Uploaded images placeholder - Budget - Timeline - Staff
+assignment - Internal notes - Status updates - Create quotation UI -
+Quote line items - Quantity - Unit rate - Subtotal - Optional discount -
+Total - Valid-until field - Terms/notes - Preview quote - Send quote
+placeholder - Accept/decline status placeholders
+
+F. Projects: - Project list - Project detail - Customer - Assigned
+staff - Project type - Location placeholder - Scope/description -
+Status - Start/end date - Milestones - Timeline - Budget field (demo) -
+Progress percentage - Photos - Notes - Create/edit - Assign team - Add
+progress update - Mark milestone - Project status workflow
+
+G. Services: - Service list - Add/edit service - Name - Slug -
+Description - Category - Image - Related gallery items - Featured -
+Active/inactive - Display order - FAQ content placeholders
+
+H. Portfolio: - Project/gallery entries - Before and after images -
+Categories - Tags - Location placeholder - Description - Date
+placeholder - Featured flag - Publish/unpublish - Preview
+
+I. Blog/articles: - Article list - Search/filter - Create/edit article -
+Title - Slug - Excerpt - Content editor placeholder (do not claim to
+implement a full rich-text editor unless it actually works) - Featured
+image - Category - Tags - Author field placeholder -
+Draft/pending/published/archived statuses - Preview -
+Publish/unpublish - SEO title/description placeholders
+
+J. Reviews/testimonials: - Review submission list - Customer name
+(demo) - Rating - Text - Related project optional - Approval status -
+Approve/reject - Publish/unpublish - Never invent real reviews
+
+K. Customers: - Customer list/search - Customer profile - Contact
+details - Orders - Quotes - Projects - Notes - Status - Customer
+activity placeholder
+
+L. Appointments: - Appointment requests - Customer - Service - Preferred
+date/time - Location/remote - Status - Assigned staff - Notes -
+Calendar/list view (functional frontend if feasible) -
+Confirm/reschedule/cancel UI
+
+M. Reports: - Product and inventory summary - Orders summary - Quote
+pipeline - Project status - Staff tasks - Date range controls -
+Export/download placeholder - Label all demonstration data clearly -
+Avoid fake data presented as live business metrics
+
+N. Settings: - Brand/company profile fields - Logo upload placeholder -
+Contact fields - Address - Working hours - Social links - Homepage hero
+content - Homepage section visibility/order controls if feasible -
+Featured products/projects selection - Quote/contact configuration
+placeholders - Notification settings - SEO defaults - Save UI with
+demo-only persistence
+
+O. Activity logs: - Actor (demo) - Action - Target type - Target name -
+Timestamp - Search/filter - Detail - Use sample logs and label as demo
+
+============================================================ 10.
+PERMISSION MODEL AND ROLE BEHAVIOR
+============================================================
+
+Implement a frontend permission model using JavaScript demo roles. Use
+clear utilities to check access and decide what navigation/pages/actions
+to show.
+
+Roles: - customer - staff - admin
+
+For demo purposes, staff permissions can be configurable by admin. Admin
+has broad access in demo, but never rely on frontend-only checks for
+real security.
+
+Expected behavior: - Public visitors can browse public pages and shop. -
+Customers can access their own account views. - Staff can access only
+their assigned workspace and permitted modules. - Admin can access admin
+control pages. - Unauthorized page visits show a clear “Access
+restricted” screen. - Unknown routes show a proper 404 page. - The demo
+login must clearly explain that authentication is simulated. - Do not
+expose a public admin-registration option.
+
+Create a centralized permission utility. Include comments explaining
+that the same checks must be implemented and enforced in backend
+security rules/API authorization after the database is connected.
+
+============================================================ 11.
+INTERACTION AND DEMO FUNCTIONALITY
+============================================================
+
+The frontend should feel interactive and usable, not like static
+screenshots.
+
+Implement where possible: - Navigation and route changes - Mobile menu -
+Search UI and search results - Shop filters and sorting - Product
+details - Wishlist toggling - Cart add/remove/update - Cart totals -
+Quote form validation - Contact form validation - Booking form
+validation - Image selection previews (frontend only) - Modal/drawer
+open and close - Toast feedback - Confirmation dialogs - Table filtering
+and sorting - Pagination where useful - Staff task status updates - Demo
+product creation/editing - Admin product/category management demo
+state - Quote status changes - Order status changes - Project progress
+changes - Staff permission toggles - Article draft editing - Admin
+content approval flows - Dashboard navigation - Profile forms -
+Newsletter form validation - Before/after slider
+
+Use local demo state and, if helpful, localStorage to make selected
+frontend demonstrations persist across refresh. Clearly comment that
+localStorage is for demo persistence only and must be replaced by
+authenticated database operations for real multi-user functionality. Do
+not store passwords or sensitive personal information in localStorage.
+
+For every interaction: - Show loading state where appropriate. - Show
+success/error feedback. - Prevent duplicate submission where sensible. -
+Use proper validation. - Keep the state consistent across screens during
+the demo where feasible. - Never pretend that a payment, email, real
+booking, file upload, database write, or notification actually happened
+when it has not.
+
+============================================================ 12. BACKEND
+INTEGRATION SLOTS: KEEP THESE CLEAR AND EASY TO REPLACE
+============================================================
+
+I will connect the database and backend myself later. Build the frontend
+so database integration is straightforward and does not require
+rewriting the UI.
+
+Create a services layer containing JavaScript service modules.
+Components/pages should call these service functions rather than
+directly accessing demo arrays everywhere.
+
+Required service modules: - authService.js - productService.js -
+orderService.js - quoteService.js - projectService.js -
+contentService.js - staffService.js - uploadService.js -
+notificationService.js
+
+Each module should: 1. Have clear, commented function names. 2. Return
+predictable data shapes. 3. Contain demo implementations now. 4. Include
+clearly marked TODO comments where real backend integration will replace
+demo behavior. 5. Avoid mixing backend connection logic into
+presentation components. 6. Be easy to switch from demo mode to real
+backend mode.
+
+Examples of function names/signatures (adapt as appropriate):
+authService: - login(email, password) - logout() - getCurrentUser() -
+registerCustomer(data) - requestPasswordReset(email)
+
+productService: - getProducts(filters) - getProductBySlug(slug) -
+createProduct(data) - updateProduct(id, data) - deleteProduct(id) -
+getCategories() - createCategory(data) - updateCategory(id, data)
+
+orderService: - getOrders(filters) - getOrderById(id) -
+createOrderDraft(data) - updateOrderStatus(id, status)
+
+quoteService: - getQuotes(filters) - getQuoteById(id) -
+createQuoteRequest(data) - updateQuoteStatus(id, status) -
+createQuotation(data)
+
+projectService: - getProjects(filters) - getProjectById(id) -
+createProject(data) - updateProject(id, data) - addProjectUpdate(id,
+update)
+
+contentService: - getServices() - getArticles() - getPortfolio() -
+getTestimonials() - create/update/publish content functions as
+appropriate
+
+staffService: - getStaff() - createStaffInvite(data) -
+updateStaff(data) - updatePermissions(id, permissions) -
+assignTask(data) - getTasks(filters)
+
+uploadService: - previewFile(file) - uploadImage(file) as a clearly
+labeled demo placeholder returning a demo result only - TODO: connect to
+secure real file-storage provider, validate file type/size, and
+implement authorization
+
+notificationService: - getNotifications() - markNotificationRead(id) -
+sendNotification() demo placeholder
+
+Do not create a fake database connection. Do not include real secret
+keys, service role keys, API keys, passwords, credentials, or private
+environment values.
+
+Create a file services/README.md (or equivalent integration guide) that
+explains: - Where database connection configuration will go. - Which
+service modules map to which database tables/entities. - Which frontend
+functions will be replaced with real queries. - Expected data shapes. -
+Where authentication will be connected. - How to add real image
+upload. - How to implement security. - What must be tested after backend
+integration.
+
+Add a central config file such as src/config/appConfig.js with: -
+DEMO_MODE = true - clear comments explaining that demo mode must be
+disabled/replaced only after real services are configured - no secrets -
+feature flags for payment, upload, AI, notifications, project tracking,
+etc. Never embed secret credentials in client-side code.
+
+============================================================ 13.
+DATABASE-INTEGRATION DATA MODEL DOCUMENTATION
+============================================================
+
+Create a clear data model outline in the integration README. The
+frontend is not required to create these tables, but the documentation
+should explain suggested entities:
+
+-   users/profiles
+-   staff_profiles
+-   roles
+-   permissions
+-   staff_role_assignments or role/permission mappings
+-   products
+-   product_categories
+-   product_variants
+-   inventory
+-   wishlists
+-   carts (if persistent carts are planned)
+-   orders
+-   order_items
+-   payments (payment metadata only; never raw card data)
+-   delivery_addresses
+-   quote_requests
+-   quotations
+-   quotation_items
+-   projects
+-   project_members
+-   project_milestones
+-   project_updates
+-   project_media
+-   services
+-   portfolio_items
+-   portfolio_media
+-   articles
+-   article_categories
+-   testimonials
+-   appointments
+-   tasks
+-   notifications
+-   activity_logs
+-   company_settings
+-   homepage_content
+
+Explain at a high level which entities relate to each other. Do not
+assume a specific schema is final. Include a note to design database
+constraints, ownership rules, and indexes before production.
+
+============================================================ 14.
+SECURITY, PRIVACY, AND PRODUCTION NOTES
+============================================================
+
+Add comments and documentation explaining these must be addressed before
+production:
+
+-   Authentication and session handling
+-   Role-based and permission-based authorization
+-   Server/database enforcement of access permissions
+-   Staff invite flow
+-   Admin account provisioning
+-   Secure password reset
+-   Email verification if required
+-   Input validation on frontend AND backend
+-   File upload validation (type, size, content)
+-   Storage permissions
+-   Protection against unauthorized access to customer records
+-   Customers must only see their own data
+-   Staff should only see data they are authorized to access
+-   Admin action auditing
+-   Rate limiting where appropriate
+-   Payment provider integration and server-side payment verification
+-   Secure environment variables
+-   Privacy policy and terms
+-   Consent and retention decisions
+-   Error handling that does not leak sensitive information
+-   Production HTTPS
+-   Backup and recovery
+-   Monitoring
+-   SEO metadata
+-   Accessibility checks
+-   Testing on real mobile devices and major browsers
+
+Never use frontend-only role checks as the security boundary. Never make
+an admin account by changing a role in the browser. Do not put secrets
+in Vite environment variables exposed to the client unless they are
+explicitly public keys intended for browser use.
+
+============================================================ 15. FUTURE
+FEATURES: DESIGN FOR EXTENSION, DO NOT FAKE THEM
+============================================================
+
+Make space in the architecture and, where useful, design
+disabled/“Coming Later” placeholders for:
+
+-   AI customer assistant grounded in actual Rehoyah service/product
+    data
+-   Online quotation calculator
+-   Appointment scheduling with actual availability
+-   Paystack payment integration and server-side verification
+-   Customer order tracking
+-   Customer project tracking
+-   Notifications (email, SMS, or in-app)
+-   Paint color visualizer (customer uploads room image and previews
+    selected colors)
+-   AR furniture placement
+-   Franchise enquiry
+-   Training academy
+-   Dealer registration
+-   Contractor portal
+-   Affiliate program
+-   Analytics and reports
+
+These should be presented as planned features only, not implemented
+functionality. Do not create fake AI chat that answers random questions
+and pretend it is connected to company knowledge. If an AI interface is
+shown, clearly mark it as a demo shell.
+
+============================================================ 16.
+CONTENT, IMAGES, AND DEMO DATA RULES
+============================================================
+
+Use tasteful image placeholders or real stock photography available in
+the generation environment. Prioritize: - Finished residential
+interiors - Offices - Schools - Hotels - Commercial spaces - Exterior
+painting - Decorative wall finishes - Furniture and cabinetry - Paint
+products and materials - Workmanship details
+
+Avoid: - Futuristic AI interiors - Unrealistic architectural scenes -
+Excessively staged fantasy environments - Image collages used as
+backgrounds for everything - Generated logos - Repeated identical
+imagery across every section
+
+If real images cannot be bundled, use image slots with a clear fallback
+and comments identifying what type of image should be inserted. Do not
+rely on remote images that are likely to break without warning. Use
+local assets when possible and make it obvious where assets should be
+replaced.
+
+Demo content: - Clearly mark sample products, sample prices, sample
+staff, sample orders, sample customers, sample projects, and sample
+reviews. - Never create fake testimonials that could be mistaken for
+real. - Never present invented company address/contact details as
+factual. - Keep data centralized in demoData.js so replacing it with
+real data is straightforward.
+
+============================================================ 17.
+COMMENTS AND CODE EXPLANATION REQUIREMENTS
+============================================================
+
+This is being built for a developer who will continue maintaining and
+integrating the project. Code comments are important.
+
+Add meaningful comments: - At the top of major files explaining what the
+file is responsible for. - Before non-obvious functions explaining what
+they do. - Where frontend demo data is used. - Where localStorage is
+used and why. - Where authentication/backend integration will replace
+the demo logic. - At permission checks explaining they are frontend
+previews, not real security. - At image upload placeholders. - At
+payment placeholders. - At quotation/order creation flows. - Where a new
+page/module can be added. - Where shared components are reused.
+
+Do NOT comment every obvious line or produce noisy comments. Comments
+should teach the purpose and help a human developer navigate and safely
+modify the project. Use clear, beginner-friendly naming. Avoid cryptic
+abbreviations. Avoid huge files and complicated abstractions.
+
+============================================================ 18. TXT
+DOCUMENTATION FILE REQUIRED
+============================================================
+
+Create a plain-text file named:
+
+REHOYAH_PROJECT_GUIDE.txt
+
+It must be a genuinely useful developer handover document, written in
+clear, beginner-friendly language. Organize it with headings, numbered
+sections, short paragraphs, checklists, and plain-text diagrams where
+useful.
+
+Include:
+
+1.  Project overview and what Rehoyah’s website is intended to do.
+2.  Exact technology constraints: React, Vite, JavaScript, JSX, CSS
+    only; no TypeScript.
+3.  How to install dependencies and start the development server.
+4.  Folder structure and what each important folder/file does.
+5.  How routing works and where pages are located.
+6.  How to edit the colors, fonts, spacing, and shared styling.
+7.  How the public pages work.
+8.  How shop demo data is organized and how to add/edit demo
+    products/categories.
+9.  How cart and wishlist demo state work.
+10. How quote, contact, and booking forms work in demo mode.
+11. Customer dashboard modules and demo behavior.
+12. Staff dashboard modules and permission preview.
+13. Admin dashboard modules and workflows.
+14. A complete list of demo-only features that do NOT yet contact the
+    business, persist to a real database, send email, upload to
+    permanent storage, book appointments, take payments, or securely
+    authenticate.
+15. Backend integration slots and how the service modules are intended
+    to be replaced.
+16. A suggested database/entity list and relationships.
+17. Suggested roles and permissions.
+18. How real authentication should be connected.
+19. How to connect a real database without rewriting UI components.
+20. How secure image/file storage should be added.
+21. How Paystack/payment integration should be added safely.
+22. Future features and what is intentionally not implemented.
+23. Production launch checklist.
+24. Troubleshooting tips for common Vite/npm problems.
+25. Glossary of simple explanations for terms such as component, route,
+    state, service module, database, authentication, authorization, API,
+    environment variable, demo mode.
+
+The guide should explain things plainly, not assume the reader is an
+experienced software architect. It must be accurate to the generated
+code and not claim functions exist if they do not.
+
+============================================================ 19.
+COMPLETION AND QUALITY CHECK
+============================================================
+
+Before finishing, review the generated project and ensure:
+
+-   It is a React + Vite + JavaScript + JSX project.
+-   No TypeScript/TSX files are present.
+-   It is not just a single landing page.
+-   All major pages and routes exist.
+-   Public navigation works.
+-   Staff and admin dashboard navigation works.
+-   The customer account screens exist.
+-   The layout is responsive.
+-   Shared styling is consistent.
+-   Forms have validation and feedback.
+-   Shop interactions work in demo mode.
+-   Cart calculations work.
+-   Wishlist interactions work.
+-   Before/after slider works.
+-   Demo status is visible and honest.
+-   Demo data is separated from UI.
+-   Service modules are present and documented.
+-   Database integration points are clear.
+-   Permissions are centralized and explained.
+-   No fake credentials or secret keys are present.
+-   No unsupported backend functionality is claimed.
+-   Code comments are useful.
+-   REHOYAH_PROJECT_GUIDE.txt is included.
+-   The guide matches what was actually built.
+
+If an environment limitation prevents a feature from being implemented,
+do not silently omit it. Add a clearly labeled placeholder, document the
+limitation in the TXT guide, and keep the architecture ready for future
+implementation.
+
+============================================================ 20. FINAL
+BUILD INSTRUCTION
+============================================================
+
+Build the complete Rehoyah frontend system described above now. Make
+sensible design and implementation decisions without asking me to
+approve every detail. Prioritize a polished, believable, human-designed
+experience and maintainable code over gimmicks.
+
+Do not stop after the homepage. Do not create only static mockup
+screens. Implement the routes, reusable components, demo interactions,
+responsive layouts, frontend permission preview, service modules,
+integration comments, and the developer handover text file.
+
+The final result should be an organized, understandable,
+frontend-complete foundation that can be connected to a real backend and
+taken toward production by a developer.
+
+Rehoyah should feel like a real, premium Nigerian interior and exterior
+solutions business with a practical digital platform behind it.

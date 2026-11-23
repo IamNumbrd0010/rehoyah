@@ -1,0 +1,396 @@
+================================================================================
+REHOYAH — FRONTEND DEVELOPER & HANDOVER GUIDE
+================================================================================
+Tagline: Transforming Spaces, Creating Lasting Impressions.
+Build Mode: Frontend-First Blueprint (React + Vite + JavaScript + JSX + CSS)
+Status: DEMO MODE ACTIVE (No live database, payment, email, or cloud storage)
+
+================================================================================
+1. PROJECT OVERVIEW & WHAT REHOYAH'S WEBSITE IS INTENDED TO DO
+================================================================================
+This codebase is the complete frontend web application for REHOYAH, a Nigerian
+interior and exterior finishing, paints, decor materials, custom furniture,
+and renovation brand.
+
+It brings together five connected experiences in one React application:
+  1) Public Brand Website (Home, About, Services, Projects, Inspiration, Contact)
+  2) Online Storefront Demo (Shop catalogue, Product Detail, Wishlist, Cart Drawer)
+  3) Service Lead Flows (Request a Quote with review step, Book Consultation)
+  4) Customer Portal (/account/*) for orders, saved items, quotes, projects, profile
+  5) Staff Workspace (/staff/*) and Admin Control Center (/admin/*)
+
+Every page reads and writes through clean JavaScript service modules inside
+`src/services/`. Right now those services run on demo data and browser
+localStorage so you can test every workflow before wiring your real backend
+and database.
+
+================================================================================
+2. EXACT TECHNOLOGY CONSTRAINTS
+================================================================================
+- Built strictly with: React 19, Vite, JavaScript (.js), JSX (.jsx), and CSS.
+- Routing: react-router-dom (BrowserRouter, Routes, Route).
+- Icons: lucide-react.
+- NO TypeScript (.ts, .tsx, or tsconfig.json) is used anywhere in the project.
+- NO backend server, database connection, or secret API keys are wired yet.
+
+================================================================================
+3. HOW TO INSTALL DEPENDENCIES & START THE DEVELOPMENT SERVER
+================================================================================
+1. Make sure Node.js (v18+ or v20+) and npm are installed.
+2. Open a terminal in the project root folder.
+3. Install dependencies:
+     npm install
+4. Start the fast Vite development server on port 3000:
+     npm run dev
+5. Check JavaScript/JSX syntax:
+     npm run lint
+6. Build optimized production files into `dist/`:
+     npm run build
+
+================================================================================
+4. FOLDER STRUCTURE & WHAT EACH IMPORTANT FOLDER / FILE DOES
+================================================================================
+index.html                  -> HTML entry point, loads Google Fonts & /src/main.jsx
+vite.config.js              -> Vite configuration in plain JavaScript
+package.json                -> Scripts (dev, build, lint) and dependencies
+REHOYAH_PROJECT_GUIDE.txt   -> This developer handover guide
+
+public/assets/placeholders/ -> Local SVG architectural placeholder graphics
+                               Replace these with real Rehoyah photography.
+
+src/
+  main.jsx                  -> Mounts <App /> and imports src/styles/global.css
+  App.jsx                   -> Defines all routes and wraps app in AppProvider
+  config/
+    appConfig.js            -> Central DEMO_MODE toggle & future feature flags
+  context/
+    AppContext.jsx          -> Global React state (currentUser, cart, wishlist,
+                               settings, toast notifications)
+  styles/
+    tokens.css              -> Brand colors (#0B2545, #D4AF37, #F57C00), fonts,
+                               spacing, radii, and subtle shadow variables
+    global.css              -> Base typography, focus outlines, form & card styles
+    responsive.css          -> Breakpoint gutters & mobile stacked table rules
+  data/
+    demoData.js             -> Centralized sample products, categories, services,
+                               projects, articles, orders, quotes, appointments,
+                               tasks, notifications, reviews, and activity logs
+    demoUsers.js            -> Sample Customer, Staff, and Admin demo accounts
+  services/
+    README.md               -> Technical backend integration checklist & schemas
+    demoStore.js            -> Helper that saves/reads demo changes in localStorage
+    authService.js          -> Demo login, logout, registration, password reset
+    productService.js       -> Products & categories CRUD
+    orderService.js         -> Order drafts & fulfillment status updates
+    quoteService.js         -> Quote requests, notes, staff assignment, line items
+    projectService.js       -> Portfolio, before/after slots, milestones, updates
+    contentService.js       -> Services, articles, reviews, appointments, settings
+    staffService.js         -> Staff list, permissions, tasks, customers, logs
+    uploadService.js        -> Local browser image preview & size/type validation
+    notificationService.js  -> Demo in-app notifications
+  utils/
+    formatCurrency.js       -> Formats numbers in Nigerian Naira (₦)
+    validation.js           -> Email, phone, password, required, and slug helpers
+    permissions.js          -> Centralized role & permission preview rules
+  components/
+    layout/                 -> SiteHeader, SiteFooter, PageShell, MobileNavigation,
+                               Breadcrumbs
+    common/                 -> Button, SectionHeading, EmptyState, LoadingState,
+                               StatusBadge, Modal, Toast, ConfirmDialog,
+                               SearchInput, Pagination, ImageUploadPlaceholder
+    shop/                   -> ProductCard, ProductFilters, CartDrawer,
+                               QuantityControl
+    projects/               -> BeforeAfterSlider, ProjectCard
+    dashboard/              -> DashboardShell, DashboardSidebar, DashboardTopbar,
+                               StatCard, DataTable, PermissionNotice
+  pages/
+    public/                 -> 15 public pages (Home, About, Services, Shop, etc.)
+    auth/                   -> LoginPage, RegisterPage, ForgotPasswordPage
+    customer/               -> 7 Customer portal screens (/account/*)
+    staff/                  -> 7 Staff workspace screens (/staff/*)
+    admin/                  -> 16 Admin control center screens (/admin/*)
+
+================================================================================
+5. HOW ROUTING WORKS & WHERE PAGES ARE LOCATED
+================================================================================
+Routing is configured in `src/App.jsx` using `react-router-dom`.
+
+PUBLIC ROUTES:
+  /                              -> pages/public/HomePage.jsx
+  /about                         -> pages/public/AboutPage.jsx
+  /services                      -> pages/public/ServicesPage.jsx
+  /services/:slug                -> pages/public/ServiceDetailPage.jsx
+  /shop                          -> pages/public/ShopPage.jsx
+  /shop/:productSlug             -> pages/public/ProductDetailPage.jsx
+  /projects                      -> pages/public/ProjectsPage.jsx
+  /projects/:projectSlug         -> pages/public/ProjectDetailPage.jsx
+  /inspiration                   -> pages/public/InspirationPage.jsx
+  /inspiration/:articleSlug      -> pages/public/ArticleDetailPage.jsx
+  /contact                       -> pages/public/ContactPage.jsx
+  /request-quote                 -> pages/public/QuoteRequestPage.jsx
+  /book-consultation             -> pages/public/BookingPage.jsx
+  /privacy, /terms               -> pages/public/LegalPlaceholderPage.jsx
+  * (any unknown URL)            -> pages/public/NotFoundPage.jsx
+
+AUTH ROUTES:
+  /login, /register, /forgot-password -> pages/auth/*
+
+CUSTOMER PORTAL (/account/*):
+  /account, /account/orders, /account/orders/:id, /account/wishlist,
+  /account/quotes, /account/projects, /account/profile
+
+STAFF WORKSPACE (/staff/*):
+  /staff, /staff/tasks, /staff/enquiries, /staff/products,
+  /staff/projects, /staff/content, /staff/profile
+
+ADMIN CONTROL CENTER (/admin/*):
+  /admin, /admin/staff, /admin/products, /admin/categories, /admin/orders,
+  /admin/quotes, /admin/projects, /admin/services, /admin/portfolio,
+  /admin/articles, /admin/reviews, /admin/customers, /admin/appointments,
+  /admin/reports, /admin/settings, /admin/activity
+
+================================================================================
+6. HOW TO EDIT COLORS, FONTS, SPACING & SHARED STYLING
+================================================================================
+Open `src/styles/tokens.css`:
+- Primary Navy:  --color-navy: #0B2545
+- Secondary Gold: --color-gold: #D4AF37
+- Accent Orange: --color-orange: #F57C00
+- Typography:    --font-heading (Poppins), --font-body (Open Sans),
+                 --font-button (Montserrat)
+- Container width & section spacing variables are at the top of `tokens.css`.
+- Responsive table stacking rules for mobile live in `src/styles/responsive.css`.
+- Shared form inputs (`.rehoyah-input`, `.rehoyah-select`) and cards
+  (`.rehoyah-card`) live in `src/styles/global.css`.
+
+================================================================================
+7. HOW THE PUBLIC PAGES WORK
+================================================================================
+- HomePage loads featured categories, 6 featured services, featured products,
+  featured projects, sample articles, and admin-editable hero/visibility settings
+  from the service modules.
+- ServicesPage & ServiceDetailPage render all 19 Rehoyah services dynamically.
+- ProjectsPage & ProjectDetailPage support filtering across Residential,
+  Commercial, Office, School, Church, Hotel, Restaurant, Interior, Exterior,
+  and Furniture, plus an interactive keyboard-accessible Before/After slider.
+- InspirationPage & ArticleDetailPage render editorial guides and copy-link share.
+
+================================================================================
+8. HOW SHOP DEMO DATA IS ORGANIZED & HOW TO ADD/EDIT PRODUCTS OR CATEGORIES
+================================================================================
+- Initial sample data lives in `src/data/demoData.js` (`initialCategories` and
+  `initialProducts`).
+- All sample prices are formatted in Naira via `src/utils/formatCurrency.js`.
+- You can edit `demoData.js` directly OR create/edit items inside the app at
+  `/admin/products` and `/admin/categories` (saved to browser localStorage).
+- Note: If you edit `demoData.js` after testing in the browser, clear site
+  localStorage (or run `localStorage.clear()` in DevTools console) so fresh
+  initial data reloads.
+
+================================================================================
+9. HOW CART & WISHLIST DEMO STATE WORK
+================================================================================
+- Managed in `src/context/AppContext.jsx`.
+- Cart items and Wishlist product IDs persist in browser `localStorage` under
+  keys `rehoyah_demo_v1_cart_items` and `rehoyah_demo_v1_wishlist_ids`.
+- `CartDrawer.jsx` calculates NGN subtotals, updates quantities, and lets you
+  submit a Demo Order Draft (explicitly marked NOT PAID / payment not connected).
+
+================================================================================
+10. HOW QUOTE, CONTACT & BOOKING FORMS WORK IN DEMO MODE
+================================================================================
+- QuoteRequestPage (`/request-quote`): Validates inputs, lets users preview
+  local photos via `uploadService.previewFile()`, shows a Review step, and saves
+  a demo quote into `quoteService.js` (`localStorage`).
+- BookingPage (`/book-consultation`): Validates date, slot, mode, and contact
+  fields, then saves a demo appointment in `contentService.js`.
+- ContactPage (`/contact`) & Footer Newsletter: Validate inputs and store local
+  demo records only. They clearly notify the user no email was sent.
+
+================================================================================
+11. CUSTOMER DASHBOARD MODULES (/account/*)
+================================================================================
+- Overview: Quick counts of demo orders, saved wishlist items, quotes, projects.
+- Orders & Order Detail: Shows fulfillment timeline and unpaid demo payment note.
+- Wishlist: Displays saved products with quick Add to Cart / remove toggles.
+- Quotes: Shows quote statuses and prepared line-item quotations with Accept /
+  Decline demo buttons when status is "Sent".
+- Projects: Displays progress bar and milestone checklist placeholders.
+- Profile & Addresses: Allows editing demo name/phone and adding/deleting
+  sample delivery addresses.
+
+================================================================================
+12. STAFF DASHBOARD MODULES & PERMISSION PREVIEW (/staff/*)
+================================================================================
+- Uses `DashboardShell` + `src/utils/permissions.js` (`hasPermission`).
+- Sidebar links and routes automatically hide/restrict modules that the active
+  staff demo user lacks permission for (for example, Content Staff vs Project
+  Coordinator).
+- Staff can update task statuses, add internal notes to assigned enquiries,
+  submit product drafts for Admin review (`pending`), update project milestones/
+  progress, and write article drafts.
+
+================================================================================
+13. ADMIN DASHBOARD MODULES & WORKFLOWS (/admin/*)
+================================================================================
+- Staff & Permissions: Invite demo staff, apply role presets, toggle individual
+  permission checkboxes, assign tasks, and suspend/activate accounts.
+- Products & Categories: Full demo CRUD, stock quantities, variations, featured
+  flags, and draft/pending/published/archived approval workflow.
+- Orders: Filter, inspect items, update fulfillment status, or cancel.
+- Quotes & Enquiries: Assign staff, build line-item quotations (quantity x rate
+  minus discount), set valid-until date, and mark Sent (demo).
+- Projects, Services, Portfolio, Articles, Reviews, Customers, Appointments,
+  Reports (Demo), Settings (hero/contact/visibility), and Activity Logs.
+
+================================================================================
+14. COMPLETE LIST OF DEMO-ONLY FEATURES (NOT YET LIVE)
+================================================================================
+Until you connect a real backend and third-party providers, the following do NOT
+happen in reality:
+  [x] No real database writes (everything stays in browser memory/localStorage)
+  [x] No secure password authentication or session cookies
+  [x] No real email, SMS, or WhatsApp delivery (contact, quote, reset, invite)
+  [x] No permanent image/file upload (files are local browser preview URLs only)
+  [x] No real appointment calendar availability checking
+  [x] No Paystack payment charging or transaction verification
+  [x] No multi-user syncing across different browsers or devices
+
+================================================================================
+15. BACKEND INTEGRATION SLOTS & REPLACING SERVICE MODULES
+================================================================================
+Every UI page calls `src/services/*.js` rather than writing raw `fetch` calls
+inside JSX components. To connect your backend:
+  1. Set `VITE_API_BASE_URL` in your `.env` file (never store secrets in Vite).
+  2. Open each file in `src/services/` and replace the `readDemoStore` /
+     `writeDemoStore` demo implementation at the marked `TODO` comments with
+     `fetch()` / SDK calls to your backend API.
+  3. Keep the returned object shapes consistent (`{ ok, data, error }`).
+  4. Set `DEMO_MODE: false` in `src/config/appConfig.js`.
+  5. Remove the Demo Role Switcher from `SiteHeader.jsx`, `DashboardTopbar.jsx`,
+     and `LoginPage.jsx`.
+
+See `src/services/README.md` for full function-to-table mappings.
+
+================================================================================
+16. SUGGESTED DATABASE ENTITIES & RELATIONSHIPS
+================================================================================
+See `src/services/README.md` Section 3 for the full entity list covering:
+  users, profiles, staff_profiles, roles, permissions, staff_role_assignments,
+  product_categories, products, product_variants, inventory, wishlists, carts,
+  delivery_addresses, orders, order_items, payments, quote_requests, quotations,
+  quotation_items, projects, project_members, project_milestones,
+  project_updates, project_media, services, portfolio_items, portfolio_media,
+  articles, article_categories, testimonials, appointments, tasks,
+  notifications, activity_logs, company_settings, homepage_content.
+
+Always enforce foreign keys, ownership rules (e.g. `orders.customer_id =
+current_user.id`), and indexes before production.
+
+================================================================================
+17. SUGGESTED ROLES & PERMISSIONS
+================================================================================
+Top-level roles: `customer`, `staff`, `admin`.
+Staff role presets in `src/utils/permissions.js`:
+  Administrator, Content Editor, Store/Product Manager,
+  Sales/Quotation Staff, Project Coordinator, General Staff.
+Permission keys include `manageProducts`, `createProducts`, `editProducts`,
+`publishProducts`, `manageOrders`, `updateOrderStatus`, `manageQuotes`,
+`assignQuotes`, `manageProjects`, `updateProjects`, `manageServices`,
+`managePortfolio`, `manageArticles`, `publishArticles`, `manageReviews`,
+`manageCustomers`, `manageAppointments`, `manageStaff`, `manageSettings`,
+`viewReports`, `viewActivityLogs`.
+
+================================================================================
+18. HOW REAL AUTHENTICATION SHOULD BE CONNECTED
+================================================================================
+- Use an HTTP-only cookie session backend or managed auth (Supabase Auth /
+  Firebase Auth / Express + bcrypt + JWT).
+- Hash passwords server-side; NEVER compare or store passwords in browser JS.
+- Public `/register` MUST hardcode `role = 'customer'` on the server and ignore
+  any `role` field sent from the browser.
+- Provision Staff and Admin accounts only through authenticated Admin invite
+  endpoints with expiring one-time invite tokens.
+
+================================================================================
+19. HOW TO CONNECT A REAL DATABASE WITHOUT REWRITING UI COMPONENTS
+================================================================================
+Because components only call `productService.getProducts()`,
+`quoteService.createQuoteRequest()`, `orderService.createOrderDraft()`, etc.,
+you only need to update the inside of each file in `src/services/`. The React
+pages and components do not need to be rewritten.
+
+================================================================================
+20. HOW SECURE IMAGE / FILE STORAGE SHOULD BE ADDED
+================================================================================
+1. Replace `uploadService.uploadImage()` so it requests a short-lived signed
+   upload URL from your authenticated backend endpoint.
+2. Upload the file directly from the browser to S3 / R2 / Supabase Storage /
+   Firebase Storage, then save the resulting file key/URL in your database.
+3. Validate file MIME type, size limit, and user authorization on the server.
+
+================================================================================
+21. HOW PAYSTACK PAYMENT INTEGRATION SHOULD BE ADDED SAFELY
+================================================================================
+1. Customer clicks Checkout -> Frontend sends cart item IDs + quantities to
+   `POST /api/orders` on your backend.
+2. Backend fetches authoritative prices from the database (never trust prices
+   sent from the browser), creates an unpaid order, and calls Paystack's
+   Initialize Transaction API using your **server-side secret key**.
+3. Frontend redirects to Paystack or opens Paystack Inline using your
+   **public key only**.
+4. After payment, your backend verifies the transaction reference with Paystack
+   AND handles Paystack signed webhooks before marking the order `Paid`.
+
+================================================================================
+22. FUTURE FEATURES (INTENTIONALLY NOT IMPLEMENTED YET)
+================================================================================
+Architecture flags in `src/config/appConfig.js` reserve space for:
+  - AI Customer Assistant grounded in verified Rehoyah product/service data
+  - Online Quotation Calculator
+  - Live Appointment Availability Scheduling
+  - Paystack Payments & Server Verification
+  - Live Order & Project Tracking Notifications (Email/SMS/In-App)
+  - Paint Colour Visualizer & AR Furniture Placement
+  - Franchise Enquiry, Training Academy, Dealer Registration,
+    Contractor Portal, Affiliate Program, and Live Business Analytics.
+
+================================================================================
+23. PRODUCTION LAUNCH CHECKLIST
+================================================================================
+[ ] Replace all placeholder contact details, legal pages, prices, and SVG assets.
+[ ] Set `DEMO_MODE = false` in `src/config/appConfig.js` and remove Demo Switchers.
+[ ] Connect real authentication, database, and server-side permission checks.
+[ ] Connect cloud file storage with server validation.
+[ ] Connect Paystack with server-side webhook verification.
+[ ] Configure HTTPS, database backups, error monitoring, and rate limiting.
+[ ] Test keyboard navigation, mobile responsiveness, and real phone viewports.
+
+================================================================================
+24. TROUBLESHOOTING TIPS (VITE / NPM)
+================================================================================
+- "Port 3000 is already in use": Stop any existing dev server or run
+  `npx vite --port 3001`.
+- Changes in `demoData.js` not showing up in the browser: Clear site
+  `localStorage` in Browser DevTools > Application > Local Storage, then refresh.
+- Missing package errors: Delete `node_modules` and run `npm install`.
+
+================================================================================
+25. BEGINNER-FRIENDLY GLOSSARY
+================================================================================
+- Component: A reusable piece of UI (like `ProductCard.jsx` or `Button.jsx`).
+- Route: A URL path (like `/shop` or `/admin/orders`) mapped to a page in `App.jsx`.
+- State: Data currently held in memory while the user interacts with a screen.
+- Service Module: A file in `src/services/` that separates data fetching/saving
+  from visual UI code.
+- Database: Permanent server storage (like PostgreSQL) where real accounts,
+  orders, and products live across all users and devices.
+- Authentication: Verifying WHO a user is (e.g. signing in with email/password).
+- Authorization: Checking WHAT an authenticated user is allowed to do (roles &
+  permissions — must be enforced on the server!).
+- API: The backend URL endpoints your React frontend talks to over HTTPS.
+- Environment Variable: Configuration values stored outside source code (`.env`);
+  only `VITE_*` variables are safe for browser code; secrets stay on the server.
+- Demo Mode: The current safe preview mode where sample data runs locally in
+  your browser without touching a live database or payment gateway.
+================================================================================

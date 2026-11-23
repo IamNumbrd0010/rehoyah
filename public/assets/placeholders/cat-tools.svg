@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <!-- Paint roller & angled sash brush -->
+  <rect x="200" y="150" width="230" height="70" rx="10" fill="#0B2545"/>
+  <path d="M430 185H475V285H315V355" stroke="#6B7280" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="295" y="355" width="40" height="125" rx="8" fill="#F57C00"/>
+  <!-- Brush -->
+  <rect x="525" y="160" width="90" height="95" fill="#D4AF37"/>
+  <rect x="525" y="255" width="90" height="24" fill="#9CA3AF"/>
+  <rect x="550" y="279" width="40" height="185" rx="8" fill="#0B2545"/>
+  <text x="48" y="548" fill="#4B5563" font-family="sans-serif" font-size="16" font-weight="600">DEMO PLACEHOLDER — TOOLS &amp; ACCESSORIES</text>
+</svg>

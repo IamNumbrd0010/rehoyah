@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#10223A"/>
+  <!-- Architectural brass pendant fixtures -->
+  <line x1="270" y1="0" x2="270" y2="175" stroke="#D4AF37" stroke-width="3"/>
+  <path d="M200 175H340L365 245H175L200 175Z" fill="#D4AF37"/>
+  <ellipse cx="270" cy="245" rx="95" ry="16" fill="#FFF7DC" fill-opacity="0.85"/>
+  <line x1="530" y1="0" x2="530" y2="235" stroke="#D4AF37" stroke-width="3"/>
+  <circle cx="530" cy="265" r="56" fill="#FFF7DC" stroke="#D4AF37" stroke-width="4"/>
+  <text x="48" y="548" fill="#E5E7EB" font-family="sans-serif" font-size="16" font-weight="600">DEMO PLACEHOLDER — ARCHITECTURAL LIGHTING</text>
+</svg>
